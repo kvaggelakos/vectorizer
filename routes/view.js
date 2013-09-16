@@ -2,7 +2,7 @@
 # @@ScriptName: view.js
 # @@Author: Konstantinos Vaggelakos<kozze89@gmail.com>
 # @@Create Date: 2013-09-11 15:48:39
-# @@Modify Date: 2013-09-16 18:15:49
+# @@Modify Date: 2013-09-16 19:18:01
 # @@Function:
 #*********************************************************/
 
@@ -36,8 +36,6 @@ exports.json = function(req, res) {
     files.forEach(function(file) {
       imageUrls.push('http://' + req.headers.host + '/' + path + '/' + file);
     });
-
-    console.log(imageUrls);
 
     res.json({images: imageUrls});
   });

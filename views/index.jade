@@ -1,17 +1,23 @@
 extends layout
 
 block content
-  h1 Vectorizer
+  center
+    h1 Vectorizer
+
   input#fileupload(type='file', name='displayImage', data-url='/upload')
 
-  div#uploadbar.progress.progress-striped.active(style="display: none;")
-    div.progress-bar(role='progressbar', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100', style='width: 0%;')
+  div#dropzone.fade.well
+    p Drop your file here!
+
+  div#uploadbar.progress.progress-striped.active
+    div.progress-bar(role='progressbar', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
 
   div#pics
 
   script.
     $(function () {
       $('#fileupload').fileupload({
+        dropZone: $('#dropzone'),
         start: function(e, data) {
           $('#uploadbar').show();
           $('#fileupload').hide();
@@ -23,6 +29,7 @@ block content
           });
           $('#uploadbar .progress-bar').css('width', '100%');
           $("#uploadbar").delay(800).fadeOut('slow');
+          $('#dropzone').delay(800).fadeOut('slow');
         },
         progressall: function (e, data) {
           var progress = parseInt(data.loaded / data.total * 80, 10);
