@@ -2,7 +2,7 @@
 # @@ScriptName: view.js
 # @@Author: Konstantinos Vaggelakos<kozze89@gmail.com>
 # @@Create Date: 2013-09-11 15:48:39
-# @@Modify Date: 2013-09-16 13:28:10
+# @@Modify Date: 2013-09-16 17:00:26
 # @@Function:
 #*********************************************************/
 
