@@ -13,7 +13,8 @@ block content
     $(function () {
       $('#fileupload').fileupload({
         start: function(e, data) {
-          $("#uploadbar").show();
+          $('#uploadbar').show();
+          $('#fileupload').hide();
         },
         dataType: 'json',
         done: function (e, data) {
