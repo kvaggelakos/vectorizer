@@ -30,6 +30,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/view/:id', view.view);
+app.get('/view/:id/json', view.json);
 app.post('/upload', vectorize.upload);
 
 http.createServer(app).listen(app.get('port'), function(){

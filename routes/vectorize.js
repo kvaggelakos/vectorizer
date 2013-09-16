@@ -2,7 +2,7 @@
 # @@ScriptName: vectorize.js
 # @@Author: Konstantinos Vaggelakos<kozze89@gmail.com>
 # @@Create Date: 2013-09-11 15:10:01
-# @@Modify Date: 2013-09-16 13:08:44
+# @@Modify Date: 2013-09-16 13:23:36
 # @@Function:
 #*********************************************************/
 
