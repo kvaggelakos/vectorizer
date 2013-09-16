@@ -4,24 +4,29 @@ block content
   h1 Vectorizer
   input#fileupload(type='file', name='displayImage', data-url='/upload')
 
-  div#uploadbar.progress.progress-striped.active
+  div#uploadbar.progress.progress-striped.active(style="display: none;")
     div.progress-bar(role='progressbar', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100', style='width: 0%;')
 
   div#pics
 
   script.
     $(function () {
-        $('#fileupload').fileupload({
-            dataType: 'json',
-            done: function (e, data) {
-              $.each(data.result.images, function (index, file) {
-                $('#pics').append('<img src=' + file + ' height=200 width=200 />'); // Append to carousel or similar later
-              });
-            },
-            progressall: function (e, data) {
-              var progress = parseInt(data.loaded / data.total * 100, 10);
-              $('#uploadbar .progress-bar').css('width', progress + '%');
-            }
-        });
+      $('#fileupload').fileupload({
+        start: function(e, data) {
+          $("#uploadbar").show();
+        },
+        dataType: 'json',
+        done: function (e, data) {
+          $.each(data.result.images, function (index, file) {
+            $('#pics').append('<img src=' + file + ' height=200 width=200 />'); // Append to carousel or similar later
+          });
+          $('#uploadbar .progress-bar').css('width', '100%');
+          $("#uploadbar").delay(800).fadeOut('slow');
+        },
+        progressall: function (e, data) {
+          var progress = parseInt(data.loaded / data.total * 80, 10);
+          $('#uploadbar .progress-bar').css('width', progress + '%');
+        }
+      });
     });
 
